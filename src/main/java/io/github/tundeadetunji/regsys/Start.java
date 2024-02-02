@@ -1,25 +1,24 @@
 package io.github.tundeadetunji.regsys;
 
-import io.github.tundeadetunji.regsys.entity.UiComponent;
-import io.github.tundeadetunji.regsys.strategy.GreenStrategy;
-import io.github.tundeadetunji.regsys.strategy.RedStrategy;
+import io.github.tundeadetunji.regsys.singleton.ConnectionManager;
 
 import java.util.List;
-import java.util.Stack;
 
 public class Start {
+    private static final String CONNECTION_STRING = "connection_string_here";
+    private static final List<Entity> INITIAL_DATA = List.of(
+            new Entity.builder().setValue("APPLE").build(),
+            new Entity.builder().setValue("APRICOT").build(),
+            new Entity.builder().setValue("ALMOND").build());
+
     public static void main(String[] args) {
-        UiComponent component = new UiComponent(new RedStrategy());
-        //component is red
-        component.attendToOtherThings();
-        //user decides to change to green theme and presses button
-        //button should change the theme to green
-        //the next two lines are called from the button
-        component.setStrategy(new GreenStrategy());
-        //from now on, it'll be green
-        component.setTheme();
-        //as usual
-        component.attendToOtherThings();
-        //...
+
+        //this ensures it can be called only once...
+        ConnectionManager con = ConnectionManager.getInstance(CONNECTION_STRING, INITIAL_DATA);
+
+        //then, business as usual
+        con.insert(new Entity.builder().setValue("Venezuela").build());
+        con.insert(new Entity.builder().setValue("Vanuatu").build());
+
     }
 }
