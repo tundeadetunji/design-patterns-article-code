@@ -13,7 +13,6 @@ public class Start {
 
     public static void main(String[] args) {
 
-        //this ensures it can be called only once...
         ConnectionManager con = ConnectionManager.getInstance(CONNECTION_STRING, INITIAL_DATA);
 
         //then, business as usual
