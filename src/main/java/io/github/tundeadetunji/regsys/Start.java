@@ -9,19 +9,19 @@ public class Start {
     public static void main(String[] args) {
         EmailProcessor fullGrid = new EmailProcessor.builder()
                 .setProtocol(Protocol.IMAP)
-                .setEmail("")
-                .setPassword("")
-                .setIncomingServer("")
-                .setIncomingPort(2)
-                .setOutgoingServer("abc")
-                .setOutgoingPort(2)
+                .setEmail("email@domain.com")
+                .setPassword("@password")
+                .setIncomingServer("imap.domain.com")
+                .setIncomingPort(993)
+                .setOutgoingServer("smtp.domain.com")
+                .setOutgoingPort(587)
                 .build();
 
         //without passing all parameters now, but will set the rest as needed:
         EmailProcessor whet = new EmailProcessor.builder()
-                .setProtocol(Protocol.Pop3)
-                .setEmail("")
-                .setPassword("")
+                .setProtocol(Protocol.IMAP)
+                .setEmail("email@domain.com")
+                .setPassword("@password")
                 .build();
     }
 }
