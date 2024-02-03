@@ -15,8 +15,8 @@ public class ConnectionManager {
         this.connectionString = connectionString;
         this.initialData = initialData;
 
-        //some intensive processing that potentially would affect performance
-        //if computed on every instance.
+        //good place for intensive processing that potentially
+        // would affect performance if computed on every instance
     }
 
     public static ConnectionManager getInstance(String connectionString, List<Entity> initialData){
