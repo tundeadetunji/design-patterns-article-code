@@ -1,13 +1,11 @@
 package io.github.tundeadetunji.regsys;
 
-import io.github.tundeadetunji.regsys.builder.EmailProcessor;
+import io.github.tundeadetunji.regsys.template.EmailProcessorTemplate;
 import io.github.tundeadetunji.regsys.noun.Protocol;
-
-import java.util.List;
 
 public class Start {
     public static void main(String[] args) {
-        EmailProcessor fullGrid = new EmailProcessor.builder()
+        EmailProcessorTemplate fullGrid = new EmailProcessorTemplate.builder()
                 .setProtocol(Protocol.IMAP)
                 .setEmail("email@domain.com")
                 .setPassword("@password")
@@ -18,7 +16,7 @@ public class Start {
                 .build();
 
         //without passing all parameters now, but will set the rest as needed:
-        EmailProcessor whet = new EmailProcessor.builder()
+        EmailProcessorTemplate whet = new EmailProcessorTemplate.builder()
                 .setProtocol(Protocol.IMAP)
                 .setEmail("email@domain.com")
                 .setPassword("@password")
