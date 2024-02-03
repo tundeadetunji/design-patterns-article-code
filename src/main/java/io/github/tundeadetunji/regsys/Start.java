@@ -1,23 +1,27 @@
 package io.github.tundeadetunji.regsys;
 
-import io.github.tundeadetunji.regsys.singleton.ConnectionManager;
+import io.github.tundeadetunji.regsys.builder.EmailProcessor;
+import io.github.tundeadetunji.regsys.noun.Protocol;
 
 import java.util.List;
 
 public class Start {
-    private static final String CONNECTION_STRING = "connection_string_here";
-    private static final List<Entity> INITIAL_DATA = List.of(
-            new Entity.builder().setValue("APPLE").build(),
-            new Entity.builder().setValue("APRICOT").build(),
-            new Entity.builder().setValue("ALMOND").build());
-
     public static void main(String[] args) {
+        EmailProcessor fullGrid = new EmailProcessor.builder()
+                .setProtocol(Protocol.IMAP)
+                .setEmail("")
+                .setPassword("")
+                .setIncomingServer("")
+                .setIncomingPort(2)
+                .setOutgoingServer("abc")
+                .setOutgoingPort(2)
+                .build();
 
-        ConnectionManager con = ConnectionManager.getInstance(CONNECTION_STRING, INITIAL_DATA);
-
-        //then, business as usual
-        con.insert(new Entity.builder().setValue("Venezuela").build());
-        con.insert(new Entity.builder().setValue("Vanuatu").build());
-
+        //without passing all parameters now, but will set the rest as needed:
+        EmailProcessor whet = new EmailProcessor.builder()
+                .setProtocol(Protocol.Pop3)
+                .setEmail("")
+                .setPassword("")
+                .build();
     }
 }
