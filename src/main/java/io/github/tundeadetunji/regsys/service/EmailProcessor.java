@@ -5,7 +5,7 @@ import io.github.tundeadetunji.regsys.template.EmailProcessorTemplate;
 
 public class EmailProcessor extends EmailProcessorTemplate {
 
-    private EmailProcessor() {
+    public EmailProcessor() {
         configure();
     }
 

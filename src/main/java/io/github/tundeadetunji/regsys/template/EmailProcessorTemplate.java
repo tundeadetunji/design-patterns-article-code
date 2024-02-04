@@ -4,11 +4,11 @@ import io.github.tundeadetunji.regsys.noun.Protocol;
 
 public abstract class EmailProcessorTemplate {
 
-    private final Protocol protocol = Protocol.IMAP;
-    private final String incomingServer = "imap.domain.com";
-    private final int incomingPort = 993;
-    private final String outgoingServer = "smtp.domain.com";
-    private final int outgoingPort = 587;
+    private final Protocol PROTOCOL = Protocol.IMAP;
+    private final String INCOMING_SERVER = "imap.domain.com";
+    private final int INCOMING_PORT = 993;
+    private final String OUTGOING_SERVER = "smtp.domain.com";
+    private final int OUTGOING_PORT = 587;
 
     public void configure(){
         //default implementation
