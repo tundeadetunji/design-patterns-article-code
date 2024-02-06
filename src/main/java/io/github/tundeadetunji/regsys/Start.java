@@ -27,4 +27,5 @@ public class Start {
             paymentProcessor.next(); //no need to do anything else, because of the way we implemented the Iterator
         }
     }
+
 }
