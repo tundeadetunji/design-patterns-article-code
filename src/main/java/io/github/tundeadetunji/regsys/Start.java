@@ -18,6 +18,5 @@ public class Start {
         //then, business as usual
         con.insert(new Entity.builder().setValue("Venezuela").build());
         con.insert(new Entity.builder().setValue("Vanuatu").build());
-
     }
 }
