@@ -21,5 +21,6 @@ public class Start {
         //time to pay
         official.mark(amy);
         //amy.hasPaid returns true
+
     }
 }
