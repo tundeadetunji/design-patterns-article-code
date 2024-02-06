@@ -21,5 +21,6 @@ public class Start {
         //as usual
         component.attendToOtherThings();
         //...
+
     }
 }
