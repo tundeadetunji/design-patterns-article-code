@@ -1,9 +1,9 @@
 package io.github.tundeadetunji.regsys.entity;
 
 import io.github.tundeadetunji.regsys.visitor.IEmployee;
-import io.github.tundeadetunji.regsys.visitor.ITreasurer;
+import io.github.tundeadetunji.regsys.visitor.Payroll;
 
-public class Treasurer implements ITreasurer {
+public class HR implements Payroll {
 
     @Override
     public IEmployee pay(IEmployee employee) {

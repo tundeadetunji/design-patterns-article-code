@@ -1,17 +1,17 @@
 package io.github.tundeadetunji.regsys.iterator;
 
 import io.github.tundeadetunji.regsys.visitor.IEmployee;
-import io.github.tundeadetunji.regsys.visitor.ITreasurer;
+import io.github.tundeadetunji.regsys.visitor.Payroll;
 
 import java.util.Stack;
 
 public class PaymentProcessor implements IPaymentIterator {
     Stack<IEmployee> employees;
-    ITreasurer treasurer;
+    Payroll hr;
 
-    public PaymentProcessor(Stack<IEmployee> employees, ITreasurer treasurer) {
+    public PaymentProcessor(Stack<IEmployee> employees, Payroll hr) {
         this.employees = employees;
-        this.treasurer = treasurer;
+        this.hr = hr;
     }
 
     @Override
@@ -25,7 +25,7 @@ public class PaymentProcessor implements IPaymentIterator {
     }
 
     private IEmployee payedThisEmployeeSalary(IEmployee employee){
-        return employee.getPaid(treasurer);
+        return employee.getPaid(hr);
     }
 
 }

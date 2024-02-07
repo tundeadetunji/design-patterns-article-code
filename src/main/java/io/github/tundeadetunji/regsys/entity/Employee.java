@@ -1,7 +1,7 @@
 package io.github.tundeadetunji.regsys.entity;
 
 import io.github.tundeadetunji.regsys.visitor.IEmployee;
-import io.github.tundeadetunji.regsys.visitor.ITreasurer;
+import io.github.tundeadetunji.regsys.visitor.Payroll;
 
 public class Employee implements IEmployee {
     private String name;
@@ -19,7 +19,7 @@ public class Employee implements IEmployee {
     }
 
     @Override
-    public IEmployee getPaid(ITreasurer treasurer) {
-        return treasurer.pay(this);
+    public IEmployee getPaid(Payroll hr) {
+        return hr.pay(this);
     }
 }

@@ -1,11 +1,10 @@
 package io.github.tundeadetunji.regsys;
 
 import io.github.tundeadetunji.regsys.entity.Employee;
-import io.github.tundeadetunji.regsys.entity.Treasurer;
+import io.github.tundeadetunji.regsys.entity.HR;
 import io.github.tundeadetunji.regsys.iterator.IPaymentIterator;
 import io.github.tundeadetunji.regsys.iterator.PaymentProcessor;
 import io.github.tundeadetunji.regsys.visitor.IEmployee;
-import io.github.tundeadetunji.regsys.visitor.ITreasurer;
 
 import java.util.List;
 import java.util.Stack;
@@ -22,7 +21,7 @@ public class Start {
 
         employees.forEach(employee -> payroll.push(employee));
 
-        IPaymentIterator paymentProcessor = new PaymentProcessor(payroll, new Treasurer());
+        IPaymentIterator paymentProcessor = new PaymentProcessor(payroll, new HR());
         while (paymentProcessor.hasNext()){
             paymentProcessor.next(); //no need to do anything else, because of the way we implemented the Iterator
         }
